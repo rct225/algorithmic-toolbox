@@ -1,10 +1,26 @@
 # Uses python3
 import sys
 
+
 def optimal_summands(n):
     summands = []
-    #write your code here
+    # write your code here
+    k = n
+    m = 1
+    if n == 2 or n == 1:
+        summands.append(n)
+    else:
+        for i in range(1, k):
+            if k <= 2 * m:
+                summands.append(k)
+                return summands
+            else:
+                summands.append(m)
+                k = k - m
+                m = m + 1
+
     return summands
+
 
 if __name__ == '__main__':
     input = sys.stdin.read()
